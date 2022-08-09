@@ -1,0 +1,27 @@
+.header {
+  width: 100%;
+  height: 6rem;
+  background-color: gray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
+}
+
+.header ul {
+  list-style: none;
+  display: flex;
+  align-items: baseline;
+  margin: 0;
+  padding: 0;
+}
+
+.header li {
+  margin: 0 .5rem;
+  color: green;
+  border: 2px solid yellow;
+  border-radius: 5%;
+  padding: 5px 10px;
+  background-color: bisque;
+  font-weight: bold;
+}

@@ -1,0 +1,80 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Video {
+  _id: String!
+  title: String!
+  category: String!
+  tags: [String!]!
+  url: String!
+  secure_url: String!
+  public_id: String!
+}
+
+type VideoUploadingResponse {
+  url: String
+  secure_url: String
+  message: String
+  error: Int
+  success: Int
+  public_id: String
+}
+
+type Query {
+  videos: [Video!]!
+  video(id: String!): Video!
+}
+
+type Mutation {
+  uploadFile(file: Upload!): VideoUploadingResponse!
+  createVideo(createVideoInput: CreateVideoInput!): Video!
+  updateVideo(updateVideoInput: UpdateVideoInput!): Video!
+  removeVideo(id: String!, public_id: String!): Video!
+}
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
+
+input CreateVideoInput {
+  """Video Title"""
+  title: String!
+
+  """Categoy of Vedio"""
+  category: String!
+
+  """Tags for Video"""
+  tags: [String!]!
+
+  """Vedio URI"""
+  url: String!
+
+  """Vedio URI"""
+  secure_url: String!
+
+  """Vedio URI"""
+  public_id: String!
+}
+
+input UpdateVideoInput {
+  """Video Title"""
+  title: String
+
+  """Categoy of Vedio"""
+  category: String
+
+  """Tags for Video"""
+  tags: [String!]
+
+  """Vedio URI"""
+  url: String
+
+  """Vedio URI"""
+  secure_url: String
+
+  """Vedio URI"""
+  public_id: String
+
+  """Video ID"""
+  id: String!
+}
